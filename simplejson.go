@@ -33,6 +33,14 @@ func New() *Json {
 	}
 }
 
+// NewFrom returns a pointer to a new, constructed from a UnMarshal structure(or part of) `json` object
+// @s check by caller in advance
+func NewFrom(s interface{}) *Json {
+	return &Json{
+		data: s,
+	}
+}
+
 // Interface returns the underlying data
 func (j *Json) Interface() interface{} {
 	return j.data
